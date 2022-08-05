@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const useServices = () =>{
+const useServices = () => {
     const [services, setServices] = useState([]);
 
-    useEffect( ()=>{
-        fetch('http://localhost:5000/service')
-        .then(res => res.json())
-        .then(data => setServices(data));
+    useEffect(() => {
+        fetch('https://secret-refuge-69927.herokuapp.com/service')
+            .then(res => res.json())
+            .then(data => setServices(data));
     }, []);
     return [services, setServices]
 }
